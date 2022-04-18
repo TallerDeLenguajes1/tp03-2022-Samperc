@@ -76,10 +76,10 @@ void MOSTRAR(Cliente *clientes, int tam)
     float totalC = 0;
     for (int i = 0; i < tam; i++)
     {
-        printf("--------------------\n");
-        printf("cliente numero: %d\n", i+1);
+        printf("***********************cliente numero: %d*************************\n",i+1);
         printf("Nombre:");
         puts(clientes->NombreCliente);
+        free(clientes->NombreCliente);
         printf("cantidad de productos: %d \n", clientes->CantidadProductosAPedir);
         pro=clientes->Productos;
         for (int i = 0; i < clientes->CantidadProductosAPedir; i++)
@@ -120,6 +120,13 @@ int main()
     clientes = p;
     MOSTRAR(clientes, tam);
      clientes = p;
+
+
+     
+     //LIBERAR MEMORIA
+
+     
+
       free(clientes);
     return 0;
 }
